@@ -2,8 +2,11 @@
 Aplicación implementada en Java 7 que pone en práctica el uso de patrones de diseño, arquitectura limpia, acceso a base 
 de datos con JDBC y networking con sockets.
 
+## Diagrama BD
+![Texto alternativo](./documentation/diagram-database.jpg)
+
 ## Diagrama UML
-![Texto alternativo](./documentation/uml-diagram.jpg)
+![Texto alternativo](./documentation/diagram-uml.jpg)
 
 ## Pre requisitos
 - MySQL

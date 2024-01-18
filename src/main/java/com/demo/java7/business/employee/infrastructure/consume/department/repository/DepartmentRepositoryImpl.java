@@ -1,8 +1,8 @@
 package com.demo.java7.business.employee.infrastructure.consume.department.repository;
 
 import com.demo.java7.business.department.domain.model.DepartmentDto;
+import com.demo.java7.business.department.infrastructure.constant.DepartmentConstant;
 import com.demo.java7.business.employee.infrastructure.consume.department.connector.DepartmentConnectorFacade;
-import com.demo.java7.business.infrastructure.constant.FileConstant;
 import com.demo.java7.business.infrastructure.util.ObjectFactory;
 import com.demo.java7.business.infrastructure.util.PropertiesReader;
 import java.util.List;
@@ -28,6 +28,6 @@ public class DepartmentRepositoryImpl implements DepartmentRepository {
   }
 
   private static String selectConnectorClass() {
-    return PropertiesReader.getProperty("departmentConnectorClass", FileConstant.SELECTOR_CLASS_FILE);
+    return PropertiesReader.getProperty("departmentConnectorClass", DepartmentConstant.DEPARTMENT_PROPERTIES_FILE);
   }
 }

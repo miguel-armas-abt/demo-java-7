@@ -4,7 +4,7 @@ import com.demo.java7.business.employee.infrastructure.consume.department.dao.De
 import com.demo.java7.business.employee.infrastructure.consume.department.mapper.DepartmentMapper;
 import com.demo.java7.business.department.domain.model.DepartmentDto;
 import com.demo.java7.business.department.infrastructure.expose.webservice.rmi.DepartmentRemoteObject;
-import com.demo.java7.business.infrastructure.constant.RMIRemoteObjectConstant;
+import com.demo.java7.business.infrastructure.enums.RMIRemoteObjectEnum;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class DepartmentConnectorRMI implements DepartmentConnectorFacade {
   public DepartmentRemoteObject departmentRemoteObject;
 
   public DepartmentConnectorRMI() {
-    departmentRemoteObject = (DepartmentRemoteObject) DepartmentRMIDAO.getRemoteObject(RMIRemoteObjectConstant.DEPARTMENT);
+    departmentRemoteObject = (DepartmentRemoteObject) DepartmentRMIDAO.getRemoteObject(RMIRemoteObjectEnum.DEPARTMENT.getRemoteObjectName());
   }
 
   @Override

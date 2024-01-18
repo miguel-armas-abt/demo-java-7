@@ -4,8 +4,8 @@ import com.demo.java7.business.department.application.service.DepartmentService;
 import com.demo.java7.business.department.application.service.DepartmentServiceImpl;
 import com.demo.java7.business.department.domain.model.DepartmentDto;
 import com.demo.java7.business.department.infrastructure.consume.repository.DepartmentRepositoryImpl;
-import com.demo.java7.business.infrastructure.properties.NetworkProperties;
-import com.demo.java7.business.infrastructure.properties.TcpServiceNameProperties;
+import com.demo.java7.business.infrastructure.constant.NetworkConstant;
+import com.demo.java7.business.infrastructure.enums.TcpServicesEnum;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -31,7 +31,7 @@ public class DepartmentTCPServer extends Thread {
   }
 
   public static void main(String[] args) throws IOException {
-    ServerSocket serverSocket = new ServerSocket(NetworkProperties.DEPARTMENTS_TCP_SERVICE_PORT);
+    ServerSocket serverSocket = new ServerSocket(NetworkConstant.DEPARTMENTS_TCP_SERVICE_PORT);
     Socket actualSocket;
     while (true) {
       actualSocket = serverSocket.accept();
@@ -47,11 +47,11 @@ public class DepartmentTCPServer extends Thread {
 
       int clientRequest = inputStream.readInt();
 
-      if(clientRequest == TcpServiceNameProperties.DEPARTMENTS_FIND_ALL) {
+      if(clientRequest == TcpServicesEnum.DEPARTMENTS_FIND_ALL.getServiceCode()) {
         findAll(outputStream);
       }
 
-      if(clientRequest == TcpServiceNameProperties.DEPARTMENTS_FIND_BY_CODE) {
+      if(clientRequest == TcpServicesEnum.DEPARTMENTS_FIND_BY_CODE.getServiceCode()) {
         findByCode(inputStream, outputStream);
       }
 
