@@ -1,4 +1,4 @@
-package com.demo.java7.business.infrastructure.constant;
+package com.demo.java7.business.commons.constant;
 
 public class NetworkConstant {
 

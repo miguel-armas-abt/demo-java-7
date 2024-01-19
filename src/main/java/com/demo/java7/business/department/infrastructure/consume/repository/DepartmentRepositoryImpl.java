@@ -3,8 +3,8 @@ package com.demo.java7.business.department.infrastructure.consume.repository;
 import com.demo.java7.business.department.domain.model.DepartmentDto;
 import com.demo.java7.business.department.infrastructure.constant.DepartmentConstant;
 import com.demo.java7.business.department.infrastructure.consume.dao.DepartmentDatabaseDAO;
-import com.demo.java7.business.infrastructure.util.ObjectFactory;
-import com.demo.java7.business.infrastructure.util.PropertiesReader;
+import com.demo.java7.business.commons.util.ObjectFactory;
+import com.demo.java7.business.commons.util.PropertiesReader;
 import java.util.List;
 
 /**

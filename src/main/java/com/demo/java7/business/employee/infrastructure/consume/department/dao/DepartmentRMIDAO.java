@@ -1,6 +1,6 @@
 package com.demo.java7.business.employee.infrastructure.consume.department.dao;
 
-import com.demo.java7.business.infrastructure.constant.NetworkConstant;
+import com.demo.java7.business.commons.constant.NetworkConstant;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 

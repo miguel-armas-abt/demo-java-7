@@ -8,8 +8,8 @@ import java.util.Vector;
 
 import com.demo.java7.business.employee.infrastructure.consume.department.mapper.DepartmentMapper;
 import com.demo.java7.business.department.domain.model.DepartmentDto;
-import com.demo.java7.business.infrastructure.constant.NetworkConstant;
-import com.demo.java7.business.infrastructure.enums.TcpServicesEnum;
+import com.demo.java7.business.commons.constant.NetworkConstant;
+import com.demo.java7.business.commons.enums.TcpServicesEnum;
 
 /**
  * Tendrá tantos métodos estáticos como servicios ofrece el servidor TCP.

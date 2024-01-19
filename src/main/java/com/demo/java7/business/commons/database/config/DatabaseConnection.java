@@ -1,6 +1,6 @@
-package com.demo.java7.business.infrastructure.database.config;
+package com.demo.java7.business.commons.database.config;
 
-import com.demo.java7.business.infrastructure.util.PropertiesReader;
+import com.demo.java7.business.commons.util.PropertiesReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 

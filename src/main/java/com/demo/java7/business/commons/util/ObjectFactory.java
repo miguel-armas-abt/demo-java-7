@@ -1,4 +1,4 @@
-package com.demo.java7.business.infrastructure.util;
+package com.demo.java7.business.commons.util;
 
 import java.util.Hashtable;
 

@@ -1,4 +1,4 @@
-package com.demo.java7.business.infrastructure.enums;
+package com.demo.java7.business.commons.enums;
 
 public enum RMIRemoteObjectEnum {
 

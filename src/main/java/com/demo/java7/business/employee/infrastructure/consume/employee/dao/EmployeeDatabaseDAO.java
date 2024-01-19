@@ -1,7 +1,7 @@
 package com.demo.java7.business.employee.infrastructure.consume.employee.dao;
 
 import com.demo.java7.business.employee.domain.model.EmployeeDto;
-import com.demo.java7.business.infrastructure.database.config.DatabaseConnection;
+import com.demo.java7.business.commons.database.config.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,7 +1,7 @@
 package com.demo.java7.business.department.infrastructure.expose.webservice.rmi;
 
-import com.demo.java7.business.infrastructure.enums.RMIRemoteObjectEnum;
-import com.demo.java7.business.infrastructure.constant.NetworkConstant;
+import com.demo.java7.business.commons.enums.RMIRemoteObjectEnum;
+import com.demo.java7.business.commons.constant.NetworkConstant;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
