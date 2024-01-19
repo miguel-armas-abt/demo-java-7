@@ -1,6 +1,6 @@
 package com.demo.java7.business.employee.infrastructure.consume.employee.repository;
 
-import com.demo.java7.business.employee.infrastructure.consume.constant.EmployeeConstant;
+import com.demo.java7.business.employee.infrastructure.constant.EmployeeConstant;
 import com.demo.java7.business.employee.infrastructure.consume.employee.dao.EmployeeDatabaseDAO;
 import com.demo.java7.business.employee.domain.model.EmployeeDto;
 import com.demo.java7.business.commons.util.ObjectFactory;

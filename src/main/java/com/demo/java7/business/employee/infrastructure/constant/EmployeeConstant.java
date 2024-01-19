@@ -1,4 +1,4 @@
-package com.demo.java7.business.employee.infrastructure.consume.constant;
+package com.demo.java7.business.employee.infrastructure.constant;
 
 public class EmployeeConstant {
 
