@@ -13,5 +13,5 @@ de datos con JDBC y networking con sockets.
 
 ## Despliegue local
 - Ejecutar el script `mysql-script.sql` en MySQL para crear la base de datos y la data de prueba
-- Ejecutar los servidores `DepartmentTCPServer` y `DepartmentRMIServer`
-- Ejecutar el método main de la clase principal `Application`
+- Exponer los servicios de departamentos a través de la aplicación `DepartmentRMIApplication` y/o `DepartmentTCPApplication`
+- Consumir los servicios antes expuestos a través de la aplicación `EmployeeApplication`
