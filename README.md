@@ -5,12 +5,11 @@
 ## Diagrama de base de datos
 ![Diagrama_BD](docs/diagram-database.jpg)
 
-## Diagrama UML
-![Diagrama_UML](docs/diagram-uml.jpg)
-
 ## Diagrama cliente-servidor / Operaciones
 ![Diagrama_UML](docs/diagram-client-server.jpg)
 
+## Diagrama UML
+![Diagrama_UML](docs/diagram-uml.jpg)
 
 ## Pre requisitos
 - MySQL
