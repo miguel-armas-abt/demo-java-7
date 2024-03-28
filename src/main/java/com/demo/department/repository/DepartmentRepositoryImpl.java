@@ -1,10 +1,9 @@
 package com.demo.department.repository;
 
 import com.demo.commons.util.ObjectFactory;
-import com.demo.department.constant.DepartmentConstant;
+import com.demo.department.properties.DepartmentProperties;
 import com.demo.department.dto.DepartmentDTO;
 import com.demo.department.repository.dao.DepartmentDatabaseDAO;
-import com.demo.commons.util.PropertiesReader;
 import java.util.List;
 
 /**
@@ -14,7 +13,8 @@ import java.util.List;
  * exponer los detalles de almacenamiento (base de datos, caché, servicio web, etc.) <br/>
  */
 public class DepartmentRepositoryImpl implements DepartmentRepository {
-  private final DepartmentDatabaseDAO departmentDatabaseDAO = (DepartmentDatabaseDAO) ObjectFactory.build(selectDaoClass());
+
+  private final DepartmentDatabaseDAO departmentDatabaseDAO = (DepartmentDatabaseDAO) ObjectFactory.build(DepartmentProperties.getDepartmentDAOClass());
 
   @Override
   public List<DepartmentDTO> findAll() {
@@ -25,9 +25,4 @@ public class DepartmentRepositoryImpl implements DepartmentRepository {
   public DepartmentDTO findByCode(int code) {
     return departmentDatabaseDAO.findByCode(code);
   }
-
-  private static String selectDaoClass() {
-    return PropertiesReader.getProperty("departmentDatabaseDaoClass", DepartmentConstant.DEPARTMENT_PROPERTIES_FILE);
-  }
-
 }

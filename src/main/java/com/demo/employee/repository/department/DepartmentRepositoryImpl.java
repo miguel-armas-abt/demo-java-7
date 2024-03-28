@@ -1,10 +1,9 @@
 package com.demo.employee.repository.department;
 
 import com.demo.commons.util.ObjectFactory;
-import com.demo.department.constant.DepartmentConstant;
 import com.demo.department.dto.DepartmentDTO;
-import com.demo.employee.repository.department.connector.DepartmentConnectorFacade;
-import com.demo.commons.util.PropertiesReader;
+import com.demo.employee.properties.EmployeeProperties;
+import com.demo.employee.repository.department.dao.DepartmentDAO;
 import java.util.List;
 
 /**
@@ -15,19 +14,15 @@ import java.util.List;
  */
 public class DepartmentRepositoryImpl implements DepartmentRepository {
 
-  private final DepartmentConnectorFacade departmentConnectorFacade = (DepartmentConnectorFacade) ObjectFactory.build(selectConnectorClass());
+  private final DepartmentDAO departmentDAO = (DepartmentDAO) ObjectFactory.build(EmployeeProperties.getDepartmentDAOClass());
 
   @Override
   public List<DepartmentDTO> findAll() {
-    return departmentConnectorFacade.findAll();
+    return departmentDAO.findAll();
   }
 
   @Override
   public DepartmentDTO findByCode(int code) {
-    return departmentConnectorFacade.findByCode(code);
-  }
-
-  private static String selectConnectorClass() {
-    return PropertiesReader.getProperty("departmentConnectorClass", DepartmentConstant.DEPARTMENT_PROPERTIES_FILE);
+    return departmentDAO.findByCode(code);
   }
 }

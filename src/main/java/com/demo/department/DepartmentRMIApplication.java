@@ -1,7 +1,7 @@
 package com.demo.department;
 
 import com.demo.commons.constant.NetworkConstant;
-import com.demo.commons.enums.RMIRemoteObjectEnum;
+import com.demo.commons.enums.RMIRemoteObjectType;
 import com.demo.department.webservice.rmi.DepartmentRMIService;
 import com.demo.department.webservice.rmi.DepartmentRMIServiceImpl;
 
@@ -21,7 +21,7 @@ public class DepartmentRMIApplication {
 
     DepartmentRMIService departmentRMIService = new DepartmentRMIServiceImpl();
     Registry registry = LocateRegistry.createRegistry(NetworkConstant.DEPARTMENTS_RMI_SERVICE_PORT);
-    registry.rebind(RMIRemoteObjectEnum.DEPARTMENT.getRemoteObjectName(), departmentRMIService);
+    registry.rebind(RMIRemoteObjectType.DEPARTMENT.getRemoteObjectName(), departmentRMIService);
     System.out.println("You have connected to the department's RMI server.");
   }
 }

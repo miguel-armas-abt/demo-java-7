@@ -4,10 +4,8 @@ import com.demo.department.service.DepartmentService;
 import com.demo.department.service.DepartmentServiceImpl;
 import com.demo.department.dto.DepartmentDTO;
 import com.demo.department.repository.DepartmentRepositoryImpl;
-
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DepartmentRMIServiceImpl extends UnicastRemoteObject implements DepartmentRMIService {
@@ -17,21 +15,14 @@ public class DepartmentRMIServiceImpl extends UnicastRemoteObject implements Dep
   }
 
   @Override
-  public List<String> findAll() throws RemoteException {
+  public List<DepartmentDTO> findAll() throws RemoteException {
     DepartmentService departmentService = new DepartmentServiceImpl(new DepartmentRepositoryImpl());
-    List<DepartmentDTO> departmentList = departmentService.findAll();
-
-    List<String> departmentListToString = new ArrayList<>();
-    for(DepartmentDTO department: departmentList)
-      departmentListToString.add(department.toString());
-
-    return departmentListToString;
+    return departmentService.findAll();
   }
 
   @Override
-  public String findByCode(int code) throws RemoteException {
+  public DepartmentDTO findByCode(int code) throws RemoteException {
     DepartmentService departmentService = new DepartmentServiceImpl(new DepartmentRepositoryImpl());
-    DepartmentDTO department = departmentService.findByCode(code);
-    return department.toString();
+    return departmentService.findByCode(code);
   }
 }

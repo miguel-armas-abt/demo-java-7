@@ -4,7 +4,7 @@ import com.demo.department.service.DepartmentService;
 import com.demo.department.service.DepartmentServiceImpl;
 import com.demo.department.dto.DepartmentDTO;
 import com.demo.department.repository.DepartmentRepositoryImpl;
-import com.demo.commons.enums.TcpServicesEnum;
+import com.demo.commons.enums.TCPServiceType;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
@@ -34,11 +34,11 @@ public class DepartmentTCPService extends Thread {
 
       int clientRequest = inputStream.readInt();
 
-      if(clientRequest == TcpServicesEnum.DEPARTMENTS_FIND_ALL.getServiceCode()) {
+      if(clientRequest == TCPServiceType.DEPARTMENTS_FIND_ALL.getServiceCode()) {
         findAll(outputStream);
       }
 
-      if(clientRequest == TcpServicesEnum.DEPARTMENTS_FIND_BY_CODE.getServiceCode()) {
+      if(clientRequest == TCPServiceType.DEPARTMENTS_FIND_BY_CODE.getServiceCode()) {
         findByCode(inputStream, outputStream);
       }
 

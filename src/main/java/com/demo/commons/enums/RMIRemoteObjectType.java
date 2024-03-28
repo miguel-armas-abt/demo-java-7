@@ -1,12 +1,12 @@
 package com.demo.commons.enums;
 
-public enum RMIRemoteObjectEnum {
+public enum RMIRemoteObjectType {
 
-  DEPARTMENT("rmiDepartmentRemote");
+  DEPARTMENT("departments");
 
   private final String remoteObjectName;
 
-  RMIRemoteObjectEnum(String remoteObjectName) {
+  RMIRemoteObjectType(String remoteObjectName) {
     this.remoteObjectName = remoteObjectName;
   }
 
