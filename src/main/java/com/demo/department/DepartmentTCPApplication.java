@@ -17,10 +17,11 @@ public class DepartmentTCPApplication extends Thread {
 
   public static void main(String[] args) throws IOException {
     ServerSocket serverSocket = new ServerSocket(NetworkConstant.DEPARTMENTS_TCP_SERVICE_PORT);
+    System.out.println("You have connected to the department's TCP server.");
     while (true) {
       Socket actualSocket = serverSocket.accept();
       new DepartmentTCPService(actualSocket).start(); //por cada conexión con el socket se instancia un nuevo TcpServer
-      System.out.println("You have connected to the department's TCP server.");
+      System.out.println("Received request from client...");
     }
   }
 

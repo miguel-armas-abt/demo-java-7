@@ -19,11 +19,17 @@ public class DepartmentRMIServiceImpl extends UnicastRemoteObject implements Dep
 
   @Override
   public List<DepartmentDTO> findAll() throws RemoteException {
+    printLogs();
     return departmentService.findAll();
   }
 
   @Override
   public DepartmentDTO findByCode(int code) throws RemoteException {
+    printLogs();
     return departmentService.findByCode(code);
+  }
+
+  private void printLogs() {
+    System.out.println("Received request from client...");
   }
 }

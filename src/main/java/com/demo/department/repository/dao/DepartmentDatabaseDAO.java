@@ -16,10 +16,16 @@ import java.util.List;
  */
 public class DepartmentDatabaseDAO {
 
+  private Connection connection = null;
+  private PreparedStatement statement = null;
+  private ResultSet result = null;
+
   public List<DepartmentDTO> findAll() {
-    try (Connection connection = DatabaseConnection.getConnection();
-         PreparedStatement statement = connection.prepareStatement("SELECT code, name, location FROM departments");
-         ResultSet result = statement.executeQuery()) {
+    try {
+      connection = DatabaseConnection.getConnection();
+      connection.setAutoCommit(false); //Las transacciones en BD no se confirmarán automáticamente. A continuación, debes confirmar (commit) o deshacer (rollback) explícitamente
+      statement = connection.prepareStatement("SELECT code, name, location FROM departments ");
+      result = statement.executeQuery();
 
       List<DepartmentDTO> departmentList = new ArrayList<>();
       while (result.next()) {
@@ -29,30 +35,62 @@ public class DepartmentDatabaseDAO {
         department.setLocation(result.getString("location"));
         departmentList.add(department);
       }
+      connection.commit(); //Confirmamos la transacción al finalizar una operación exitosa
       return departmentList;
 
     } catch (Exception ex) {
-      throw new RuntimeException("Error to find all departments: " + ex.getMessage(), ex);
+      rollback(); //Deshacemos la transacción tras una operación errónea
+      throw new RuntimeException("error to find all departments: " + ex.getMessage());
+    } finally {
+      closeResources();
     }
   }
 
   public DepartmentDTO findByCode(int code) {
-    try (Connection connection = DatabaseConnection.getConnection();
-         PreparedStatement statement = connection.prepareStatement("SELECT code, name, location FROM departments WHERE code = ?")) {
-
+    try {
+      connection = DatabaseConnection.getConnection();
+      connection.setAutoCommit(false);
+      statement = connection.prepareStatement("SELECT code, name, location FROM departments WHERE code = ?");
       statement.setInt(1, code);
-      try (ResultSet result = statement.executeQuery()) {
-        DepartmentDTO department = new DepartmentDTO();
-        if (result.next()) {
-          department.setCode(result.getInt("code"));
-          department.setLocation(result.getString("location"));
-          department.setName(result.getString("name"));
-        }
-        return department;
+      result = statement.executeQuery();
+
+      DepartmentDTO department = new DepartmentDTO();
+      if (result.next()) {
+        department.setCode(result.getInt("code"));
+        department.setLocation(result.getString("location"));
+        department.setName(result.getString("name"));
       }
+      connection.commit();
+      return department;
 
     } catch (Exception exception) {
-      throw new RuntimeException("Error to find department by code: " + exception.getMessage(), exception);
+      rollback();
+      throw new RuntimeException("error to find department by code: " + exception.getMessage());
+    } finally {
+      closeResources();
+    }
+  }
+
+  private void rollback() {
+    try {
+      if (connection != null) {
+        connection.rollback();
+      }
+    } catch (Exception exception) {
+      throw new RuntimeException("error to rollback: " + exception.getMessage());
+    }
+  }
+
+  private void closeResources() {
+    try {
+      if (statement != null) {
+        statement.close();
+      }
+      if (result != null) {
+        result.close();
+      }
+    } catch (Exception exception) {
+      throw new RuntimeException("error to close resources: " + exception.getMessage());
     }
   }
 }
