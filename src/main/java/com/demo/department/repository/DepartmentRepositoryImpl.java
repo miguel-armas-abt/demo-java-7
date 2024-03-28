@@ -1,7 +1,5 @@
 package com.demo.department.repository;
 
-import com.demo.commons.util.ObjectFactory;
-import com.demo.department.properties.DepartmentProperties;
 import com.demo.department.dto.DepartmentDTO;
 import com.demo.department.repository.dao.DepartmentDAO;
 import java.util.List;
@@ -17,7 +15,7 @@ public class DepartmentRepositoryImpl implements DepartmentRepository {
   private final DepartmentDAO departmentDAO;
 
   public DepartmentRepositoryImpl() {
-    departmentDAO = (DepartmentDAO) ObjectFactory.build(DepartmentProperties.getDepartmentDatabaseDAOClass());
+    departmentDAO = new DepartmentDAO();
   }
 
   @Override

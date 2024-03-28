@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-03-28T14:17:33.513Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="mtemg1YSqgg5PQgTixl3" version="24.2.0" type="device" pages="3">
+<mxfile host="app.diagrams.net" modified="2024-03-28T14:47:50.723Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="97VYGeASZsBI5P4OVi-2" version="24.2.0" type="device" pages="3">
   <diagram name="UML Diagram" id="872qMeDaOOM6Bme9XBFL">
-    <mxGraphModel dx="1830" dy="2042" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2196" dy="2231" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -195,42 +195,6 @@
         <mxCell id="-Qh5zQNR_VSR-YZa_GHB-85" value="implements" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="-Qh5zQNR_VSR-YZa_GHB-84" vertex="1" connectable="0">
           <mxGeometry x="-0.093" relative="1" as="geometry">
             <mxPoint x="-2" y="-9" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="-Qh5zQNR_VSR-YZa_GHB-86" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 80%;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;EmployeeDatabaseDAOMysql&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Architects Daughter;html=1;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
-          <mxGeometry x="832" y="737" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="-Qh5zQNR_VSR-YZa_GHB-87" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 80%;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;EmployeeDatabaseDAOOracle&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Architects Daughter;html=1;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
-          <mxGeometry x="1062" y="737" width="180" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="-Qh5zQNR_VSR-YZa_GHB-88" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;dashed=1;dashPattern=1 1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;sketch=1;curveFitting=1;jiggle=2;" parent="1" source="-Qh5zQNR_VSR-YZa_GHB-86" target="-Qh5zQNR_VSR-YZa_GHB-63" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="867" y="727" as="sourcePoint" />
-            <mxPoint x="903" y="674" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="922" y="725" />
-              <mxPoint x="970" y="725" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="-Qh5zQNR_VSR-YZa_GHB-89" value="extends" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="-Qh5zQNR_VSR-YZa_GHB-88" vertex="1" connectable="0">
-          <mxGeometry x="-0.093" relative="1" as="geometry">
-            <mxPoint x="-10" y="-8" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="-Qh5zQNR_VSR-YZa_GHB-90" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;dashed=1;dashPattern=1 1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;sketch=1;curveFitting=1;jiggle=2;" parent="1" source="-Qh5zQNR_VSR-YZa_GHB-87" target="-Qh5zQNR_VSR-YZa_GHB-63" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="932" y="747" as="sourcePoint" />
-            <mxPoint x="980" y="710" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="1152" y="725" />
-              <mxPoint x="1125" y="725" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="-Qh5zQNR_VSR-YZa_GHB-91" value="extends" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" parent="-Qh5zQNR_VSR-YZa_GHB-90" vertex="1" connectable="0">
-          <mxGeometry x="-0.093" relative="1" as="geometry">
-            <mxPoint x="16" y="-9" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="nEkKxy4sDLhJySdy__0V-2" style="rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;dashed=1;dashPattern=1 1;" parent="1" target="-Qh5zQNR_VSR-YZa_GHB-47" edge="1">
@@ -459,7 +423,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="uLsXKuujlwqM6aMoCdCx" name="Server-Client">
-    <mxGraphModel dx="1963" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="6317" dy="2827" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />

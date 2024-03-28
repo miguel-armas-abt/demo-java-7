@@ -8,10 +8,6 @@ public class EmployeeProperties {
 
   private static final String EMPLOYEE_PROPERTIES_FILE = "employee.properties";
 
-  public static String getEmployeeDatabaseDAOClass() {
-    return PropertiesReader.getProperty("employeeDatabaseDAOClass", EMPLOYEE_PROPERTIES_FILE);
-  }
-
   public static String getDepartmentConnectorDAOClass() {
     return PropertiesReader.getProperty("departmentConnectorDAOClass", EMPLOYEE_PROPERTIES_FILE);
   }

@@ -14,9 +14,8 @@ import java.util.List;
  * <br/>Clase DAO que permite interactuar directamente con la fuente de datos, haciendo uso de instrucciones nativas
  * SQL, NOSQL u otras tecnologías para acceder a la fuente de datos.<br/>
  */
-public abstract class EmployeeDAO {
+public class EmployeeDAO {
 
-  protected abstract String getQueryToGetLatestEmployees();
   private Connection connection = null;
   private PreparedStatement statement = null;
   private ResultSet result = null;
@@ -52,7 +51,14 @@ public abstract class EmployeeDAO {
     try {
       connection = MySQLConnection.getConnection();
       connection.setAutoCommit(false);
-      statement = connection.prepareStatement(getQueryToGetLatestEmployees());
+
+      //sql instruction is valid only for MySQL
+      String selectQuery = "SELECT code, name, contract_date, department_code ";
+      selectQuery += "FROM employees ";
+      selectQuery += "ORDER BY contract_date DESC ";
+      selectQuery += "LIMIT ? ";
+
+      statement = connection.prepareStatement(selectQuery);
       statement.setInt(1, latest);
       result = statement.executeQuery();
 
