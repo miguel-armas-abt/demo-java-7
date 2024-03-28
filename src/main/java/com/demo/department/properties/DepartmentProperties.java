@@ -8,8 +8,8 @@ public class DepartmentProperties {
 
   private static final String DEPARTMENT_PROPERTIES_FILE = "department.properties";
 
-  public static String getDepartmentDAOClass() {
-    return PropertiesReader.getProperty("departmentDAOClass", DEPARTMENT_PROPERTIES_FILE);
+  public static String getDepartmentDatabaseDAOClass() {
+    return PropertiesReader.getProperty("departmentDatabaseDAOClass", DEPARTMENT_PROPERTIES_FILE);
   }
 
 }

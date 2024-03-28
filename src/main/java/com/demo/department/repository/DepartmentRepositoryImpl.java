@@ -17,7 +17,7 @@ public class DepartmentRepositoryImpl implements DepartmentRepository {
   private final DepartmentDAO departmentDAO;
 
   public DepartmentRepositoryImpl() {
-    departmentDAO = (DepartmentDAO) ObjectFactory.build(DepartmentProperties.getDepartmentDAOClass());
+    departmentDAO = (DepartmentDAO) ObjectFactory.build(DepartmentProperties.getDepartmentDatabaseDAOClass());
   }
 
   @Override

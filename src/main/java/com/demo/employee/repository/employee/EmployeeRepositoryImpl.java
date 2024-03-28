@@ -11,7 +11,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
   private final EmployeeDAO employeeDao;
 
   public EmployeeRepositoryImpl() {
-    employeeDao = (EmployeeDAO) ObjectFactory.build(EmployeeProperties.getEmployeeDAOClass());
+    employeeDao = (EmployeeDAO) ObjectFactory.build(EmployeeProperties.getEmployeeDatabaseDAOClass());
   }
 
   @Override
