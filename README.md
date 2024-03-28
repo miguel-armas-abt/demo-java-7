@@ -1,6 +1,6 @@
 # Caso de estudio
 > - Aplicación implementada en Java 7 que pone en práctica patrones de diseño, acceso a base de datos y networking con sockets.
-> - Esta aplicación identifica a los empleados que pertenecientes a un departamento.
+> - Esta aplicación identifica a los empleados pertenecientes a un departamento.
 
 ## Diagrama de base de datos
 ![Texto alternativo](docs/diagram-database.jpg)
