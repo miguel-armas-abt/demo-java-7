@@ -8,7 +8,11 @@ import java.util.List;
 
 public class EmployeeRepositoryImpl implements EmployeeRepository {
 
-  private final EmployeeDatabaseDAO employeeDao = (EmployeeDatabaseDAO) ObjectFactory.build(EmployeeProperties.getEmployeeDAOClass());
+  private final EmployeeDatabaseDAO employeeDao;
+
+  public EmployeeRepositoryImpl() {
+    employeeDao = (EmployeeDatabaseDAO) ObjectFactory.build(EmployeeProperties.getEmployeeDAOClass());
+  }
 
   @Override
   public List<EmployeeDTO> findLatestEmployees(int quantity) {

@@ -20,17 +20,16 @@ import java.util.Collection;
 public class DepartmentTCPService extends Thread {
 
   private final Socket socket;
-  private DataInputStream inputStream = null;
-  private DataOutputStream outputStream = null;
+  private final DepartmentService departmentService;
 
   public DepartmentTCPService(Socket socket) {
     this.socket = socket;
+    departmentService = new DepartmentServiceImpl(new DepartmentRepositoryImpl());
   }
 
   public void run() {
-    try {
-      inputStream = new DataInputStream(socket.getInputStream());
-      outputStream = new DataOutputStream(socket.getOutputStream());
+    try (DataInputStream inputStream = new DataInputStream(socket.getInputStream());
+         DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream())) {
 
       int clientRequest = inputStream.readInt();
 
@@ -43,43 +42,37 @@ public class DepartmentTCPService extends Thread {
       }
 
     } catch (Exception exception) {
-      throw new RuntimeException("error to select TCP department service: " + exception.getMessage());
-
+      throw new RuntimeException("Error to select TCP department service: " + exception.getMessage(), exception);
     } finally {
       try {
-        if (outputStream != null) outputStream.close();
-        if (inputStream != null) inputStream.close();
         if (socket != null) socket.close();
       } catch (Exception exception) {
-        throw new RuntimeException("error to close TCP connection: " + exception.getMessage());
+        throw new RuntimeException("Error to close TCP connection:: " + exception.getMessage(), exception);
       }
     }
   }
 
   private void findAll(DataOutputStream output) {
     try {
-      DepartmentService departmentService = new DepartmentServiceImpl(new DepartmentRepositoryImpl());
       Collection<DepartmentDTO> departmentList = departmentService.findAll();
 
-      int size = departmentList.size(); //envío el tamaño de la colección al cliente
-      output.writeInt(size);
+      output.writeInt(departmentList.size()); //envío el tamaño de la colección al cliente
 
       for (DepartmentDTO department : departmentList) {
         output.writeUTF(department.toString()); //envío el toString de cada objeto
       }
 
     } catch (Exception exception) {
-      throw new RuntimeException("error to send department list: " + exception.getMessage());
+      throw new RuntimeException("Error to send department list: " + exception.getMessage(), exception);
     }
   }
 
   private void findByCode(DataInputStream input, DataOutputStream output) {
     try {
-      DepartmentService departmentService = new DepartmentServiceImpl(new DepartmentRepositoryImpl());
       DepartmentDTO department = departmentService.findByCode(Integer.parseInt(input.readUTF())); //lee el department code
       output.writeUTF(department.toString());
     } catch (Exception exception) {
-      throw new RuntimeException("error to send department by code: " + exception.getMessage());
+      throw new RuntimeException("Error to send department by code: " + exception.getMessage(), exception);
     }
   }
 

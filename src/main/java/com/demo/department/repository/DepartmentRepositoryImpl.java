@@ -14,7 +14,11 @@ import java.util.List;
  */
 public class DepartmentRepositoryImpl implements DepartmentRepository {
 
-  private final DepartmentDatabaseDAO departmentDatabaseDAO = (DepartmentDatabaseDAO) ObjectFactory.build(DepartmentProperties.getDepartmentDAOClass());
+  private final DepartmentDatabaseDAO departmentDatabaseDAO;
+
+  public DepartmentRepositoryImpl() {
+    departmentDatabaseDAO = (DepartmentDatabaseDAO) ObjectFactory.build(DepartmentProperties.getDepartmentDAOClass());
+  }
 
   @Override
   public List<DepartmentDTO> findAll() {

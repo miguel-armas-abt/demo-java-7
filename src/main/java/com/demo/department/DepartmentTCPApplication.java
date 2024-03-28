@@ -17,9 +17,8 @@ public class DepartmentTCPApplication extends Thread {
 
   public static void main(String[] args) throws IOException {
     ServerSocket serverSocket = new ServerSocket(NetworkConstant.DEPARTMENTS_TCP_SERVICE_PORT);
-    Socket actualSocket;
     while (true) {
-      actualSocket = serverSocket.accept();
+      Socket actualSocket = serverSocket.accept();
       new DepartmentTCPService(actualSocket).start(); //por cada conexión con el socket se instancia un nuevo TcpServer
       System.out.println("You have connected to the department's TCP server.");
     }

@@ -2,7 +2,6 @@ package com.demo.employee.repository.employee.dao;
 
 import com.demo.commons.database.config.DatabaseConnection;
 import com.demo.employee.dto.EmployeeDTO;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

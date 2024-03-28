@@ -7,76 +7,46 @@ import com.demo.employee.repository.department.mapper.DepartmentMapper;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 public class DepartmentTCPDAO implements DepartmentDAO {
 
   public List<DepartmentDTO> findAll() {
-    Socket socket = null;
-    DataOutputStream outputStream = null;
-    DataInputStream inputStream = null;
+    List<DepartmentDTO> departmentList = new ArrayList<>();
 
-    try {
-      socket = new Socket(NetworkConstant.SERVER_IP, NetworkConstant.DEPARTMENTS_TCP_SERVICE_PORT);
-      outputStream = new DataOutputStream(socket.getOutputStream());
-      inputStream = new DataInputStream(socket.getInputStream());
+    try (Socket socket = new Socket(NetworkConstant.SERVER_IP, NetworkConstant.DEPARTMENTS_TCP_SERVICE_PORT);
+         DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
+         DataInputStream inputStream = new DataInputStream(socket.getInputStream())) {
 
-      outputStream.writeInt(TCPServiceType.DEPARTMENTS_FIND_ALL.getServiceCode()); //envío al servidor el código correspondiente al servicio
-      int departmentsNumber = inputStream.readInt(); //recupero del servidor el tamaño de la lista que enviará
-
-      Vector<DepartmentDTO> departmentList = new Vector<>();
-      String serverResponse;
+      outputStream.writeInt(TCPServiceType.DEPARTMENTS_FIND_ALL.getServiceCode());
+      int departmentsNumber = inputStream.readInt();
 
       for (int i = 0; i < departmentsNumber; i++) {
-        serverResponse = inputStream.readUTF(); // recupero cada objeto en formato toString
+        String serverResponse = inputStream.readUTF();
         departmentList.add(DepartmentMapper.stringToDepartment(serverResponse));
       }
-      return departmentList;
 
     } catch (Exception exception) {
-      throw new RuntimeException("error to receive department list: " + exception.getMessage());
-
-    } finally {
-      try {
-        if (inputStream != null) inputStream.close();
-        if (outputStream != null) outputStream.close();
-        if (socket != null) socket.close();
-
-      } catch (Exception exception) {
-        throw new RuntimeException("error to close TCP connection: " + exception.getMessage());
-      }
+      throw new RuntimeException("Error while receiving department list: " + exception.getMessage(), exception);
     }
+
+    return departmentList;
   }
 
   public DepartmentDTO findByCode(int departmentCode) {
-    Socket socket = null;
-    DataOutputStream outputStream = null;
-    DataInputStream inputStream = null;
-
-    try {
-      socket = new Socket(NetworkConstant.SERVER_IP, NetworkConstant.DEPARTMENTS_TCP_SERVICE_PORT);
-      outputStream = new DataOutputStream(socket.getOutputStream());
-      inputStream = new DataInputStream(socket.getInputStream());
+    try (Socket socket = new Socket(NetworkConstant.SERVER_IP, NetworkConstant.DEPARTMENTS_TCP_SERVICE_PORT);
+         DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
+         DataInputStream inputStream = new DataInputStream(socket.getInputStream())) {
 
       outputStream.writeInt(TCPServiceType.DEPARTMENTS_FIND_BY_CODE.getServiceCode());
-      outputStream.writeUTF(Integer.toString(departmentCode)); //envio el department code
+      outputStream.writeUTF(Integer.toString(departmentCode));
 
       String serverResponse = inputStream.readUTF();
       return DepartmentMapper.stringToDepartment(serverResponse);
 
     } catch (Exception exception) {
-      throw new RuntimeException("error to receive department by code: " + exception.getMessage());
-
-    } finally {
-      try {
-        if (inputStream != null) inputStream.close();
-        if (outputStream != null) outputStream.close();
-        if (socket != null) socket.close();
-
-      } catch (Exception exception) {
-        throw new RuntimeException("error to close TCP connection: " + exception.getMessage());
-      }
+      throw new RuntimeException("Error while receiving department by code: " + exception.getMessage(), exception);
     }
   }
 

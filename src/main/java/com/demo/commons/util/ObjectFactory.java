@@ -15,12 +15,12 @@ public class ObjectFactory {
     try {
       Object object = instancesHash.get(className);
       if (object == null) {
-        object = Class.forName(className).newInstance(); //creamos una nueva instancia del tipo de objeto seleccionado
+        object = Class.forName(className).newInstance(); //creamos una nueva instancia del tipo de objeto que seleccionamos
         instancesHash.put(className, object);
       }
       return object;
     } catch (Exception ex) {
-      throw new RuntimeException("error to factory the object: " + ex.getMessage());
+      throw new RuntimeException("Error to factory the object: " + ex.getMessage());
     }
   }
 }

@@ -4,7 +4,6 @@ import com.demo.commons.constant.NetworkConstant;
 import com.demo.commons.enums.RMIRemoteObjectType;
 import com.demo.department.webservice.rmi.DepartmentRMIService;
 import com.demo.department.webservice.rmi.DepartmentRMIServiceImpl;
-
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;

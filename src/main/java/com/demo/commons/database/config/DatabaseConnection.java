@@ -15,38 +15,20 @@ public class DatabaseConnection {
   private static Connection instance = null;
 
   public static Connection getConnection() {
-    try {
+
       if (instance == null) {
-        Runtime.getRuntime().addShutdownHook(new ShutdownHook());
+        try {
+          String driver = PropertiesReader.getProperty("driver", DB_CONNECTION_FILE);
+          String url = PropertiesReader.getProperty("url", DB_CONNECTION_FILE);
+          String password = PropertiesReader.getProperty("password", DB_CONNECTION_FILE);
+          String user = PropertiesReader.getProperty("user", DB_CONNECTION_FILE);
 
-        String driver = PropertiesReader.getProperty("driver", DB_CONNECTION_FILE);
-        String url = PropertiesReader.getProperty("url", DB_CONNECTION_FILE);
-        String password = PropertiesReader.getProperty("password", DB_CONNECTION_FILE);
-        String user = PropertiesReader.getProperty("user", DB_CONNECTION_FILE);
-
-        Class.forName(driver);
-        instance = DriverManager.getConnection(url, user, password);
+          Class.forName(driver);
+          instance = DriverManager.getConnection(url, user, password);
+        } catch (Exception ex) {
+          throw new RuntimeException("Error connecting with database", ex);
+        }
       }
       return instance;
-    } catch (Exception ex) {
-      ex.printStackTrace();
-      throw new RuntimeException();
-    }
   }
-
-  /**
-   * En caso de alguna interrupción el método run() se ejecutará de todos modos.
-   */
-  static class ShutdownHook extends Thread {
-    public void run() {
-      try {
-        Connection connection = DatabaseConnection.getConnection();
-        connection.close();
-      } catch (Exception exception) {
-        exception.printStackTrace();
-        throw new RuntimeException();
-      }
-    }
-  }
-
 }
