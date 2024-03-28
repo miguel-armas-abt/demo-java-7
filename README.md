@@ -1,6 +1,9 @@
-# DEMO JAVA 7
-Aplicación implementada en Java 7 que pone en práctica el uso de patrones de diseño, arquitectura limpia, acceso a base 
+# Empleados
+Aplicación implementada en Java 7 que pone en práctica el uso de patrones de diseño, acceso a base 
 de datos con JDBC y networking con sockets.
+
+# 1. Caso de estudio
+Se requiere una aplicación capaz de identificar a los empleados que pertenecen a un departamento.
 
 ## Diagrama BD
 ![Texto alternativo](./documentation/diagram-database.jpg)
