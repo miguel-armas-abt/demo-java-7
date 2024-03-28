@@ -11,5 +11,6 @@ public class EmployeeApplication {
     EmployeeService employeeService = new EmployeeServiceImpl(new EmployeeRepositoryImpl(), new DepartmentRepositoryImpl());
     System.out.println(employeeService.findEmployeeLocation(2));
     System.out.println(employeeService.findByCode(2));
+    System.out.println(employeeService.findLatestEmployees(2));
   }
 }

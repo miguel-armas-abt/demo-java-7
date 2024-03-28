@@ -1,6 +1,6 @@
 package com.demo.employee.repository.employee.dao;
 
-public class EmployeeDatabaseDAOMysql extends EmployeeDatabaseDAO {
+public class EmployeeMysqlDAO extends EmployeeDAO {
 
   @Override
   public String getQueryToGetLatestEmployees() {

@@ -9,7 +9,7 @@ import java.sql.DriverManager;
  * <p>
  * <br/>Permite instanciar una única conexión a base de datos.<br/>
  */
-public class DatabaseConnection {
+public class MySQLConnection {
 
   private static final String DB_CONNECTION_FILE = "mysql-jdbc.properties";
   private static Connection instance = null;

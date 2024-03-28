@@ -3,7 +3,7 @@ package com.demo.department.repository;
 import com.demo.commons.util.ObjectFactory;
 import com.demo.department.properties.DepartmentProperties;
 import com.demo.department.dto.DepartmentDTO;
-import com.demo.department.repository.dao.DepartmentDatabaseDAO;
+import com.demo.department.repository.dao.DepartmentDAO;
 import java.util.List;
 
 /**
@@ -14,19 +14,19 @@ import java.util.List;
  */
 public class DepartmentRepositoryImpl implements DepartmentRepository {
 
-  private final DepartmentDatabaseDAO departmentDatabaseDAO;
+  private final DepartmentDAO departmentDAO;
 
   public DepartmentRepositoryImpl() {
-    departmentDatabaseDAO = (DepartmentDatabaseDAO) ObjectFactory.build(DepartmentProperties.getDepartmentDAOClass());
+    departmentDAO = (DepartmentDAO) ObjectFactory.build(DepartmentProperties.getDepartmentDAOClass());
   }
 
   @Override
   public List<DepartmentDTO> findAll() {
-    return departmentDatabaseDAO.findAll();
+    return departmentDAO.findAll();
   }
 
   @Override
   public DepartmentDTO findByCode(int code) {
-    return departmentDatabaseDAO.findByCode(code);
+    return departmentDAO.findByCode(code);
   }
 }

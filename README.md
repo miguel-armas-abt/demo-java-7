@@ -1,18 +1,16 @@
-# Empleados
-Aplicación implementada en Java 7 que pone en práctica el uso de patrones de diseño, acceso a base 
-de datos con JDBC y networking con sockets.
+# Caso de estudio
+> - Aplicación implementada en Java 7 que pone en práctica patrones de diseño, acceso a base de datos y networking con sockets.
+> - Esta aplicación identifica a los empleados que pertenecientes a un departamento.
 
-# 1. Caso de estudio
-Se requiere una aplicación capaz de identificar a los empleados que pertenecen a un departamento.
-
-## Diagrama BD
+## Diagrama de base de datos
 ![Texto alternativo](./documentation/diagram-database.jpg)
 
-## Diagrama UML
+## Arquitectura cliente-servidor
 ![Texto alternativo](./documentation/diagram-uml.jpg)
 
 ## Pre requisitos
 - MySQL
+- Java 7 o superior
 
 ## Despliegue local
 - Ejecutar el script `mysql-script.sql` en MySQL para crear la base de datos y la data de prueba

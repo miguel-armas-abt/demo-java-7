@@ -1,6 +1,6 @@
 package com.demo.employee.repository.employee.dao;
 
-import com.demo.commons.database.config.DatabaseConnection;
+import com.demo.commons.database.config.MySQLConnection;
 import com.demo.employee.dto.EmployeeDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ import java.util.List;
  * <br/>Clase DAO que permite interactuar directamente con la fuente de datos, haciendo uso de instrucciones nativas
  * SQL, NOSQL u otras tecnologías para acceder a la fuente de datos.<br/>
  */
-public abstract class EmployeeDatabaseDAO {
+public abstract class EmployeeDAO {
 
   protected abstract String getQueryToGetLatestEmployees();
   private Connection connection = null;
@@ -23,7 +23,7 @@ public abstract class EmployeeDatabaseDAO {
 
   public EmployeeDTO findByCode(int employeeCode) {
     try {
-      connection = DatabaseConnection.getConnection();
+      connection = MySQLConnection.getConnection();
       connection.setAutoCommit(false);
       statement = connection.prepareStatement("SELECT code, name, contract_date, department_code FROM employees WHERE code = ? ");
       statement.setInt(1, employeeCode);
@@ -50,7 +50,8 @@ public abstract class EmployeeDatabaseDAO {
 
   public List<EmployeeDTO> findLatestEmployees(int latest) {
     try {
-      connection = DatabaseConnection.getConnection();
+      connection = MySQLConnection.getConnection();
+      connection.setAutoCommit(false);
       statement = connection.prepareStatement(getQueryToGetLatestEmployees());
       statement.setInt(1, latest);
       result = statement.executeQuery();

@@ -1,6 +1,6 @@
 package com.demo.employee.repository.employee.dao;
 
-public class EmployeeDatabaseDAOOracle extends EmployeeDatabaseDAO {
+public class EmployeeOracleDAO extends EmployeeDAO {
 
   @Override
   public String getQueryToGetLatestEmployees(){
