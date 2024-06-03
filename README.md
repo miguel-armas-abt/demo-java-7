@@ -1,5 +1,5 @@
 # Caso de estudio
-> - Aplicación implementada en Java que pone en práctica patrones de diseño, acceso a base de datos y networking con sockets.
+> - Aplicación implementada en Java que pone en práctica patrones de diseño, acceso a base de datos y networking con TCP y RMI.
 > - Esta aplicación identifica a los empleados pertenecientes a un departamento.
 
 ## Diagrama de base de datos
