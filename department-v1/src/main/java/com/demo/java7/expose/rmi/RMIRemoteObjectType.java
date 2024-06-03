@@ -1,4 +1,4 @@
-package com.demo.java7.webservice.rmi;
+package com.demo.java7.expose.rmi;
 
 public enum RMIRemoteObjectType {
 

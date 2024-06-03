@@ -1,4 +1,4 @@
-package com.demo.java7.webservice.tcp;
+package com.demo.java7.expose.tcp;
 
 import com.demo.java7.departments.dto.DepartmentDTO;
 import com.demo.java7.service.DepartmentService;

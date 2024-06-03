@@ -1,4 +1,4 @@
-package com.demo.java7.webservice.rmi;
+package com.demo.java7.expose.rmi;
 
 import com.demo.java7.departments.dto.DepartmentDTO;
 import com.demo.java7.departments.rmi.DepartmentRMIService;

@@ -1,4 +1,4 @@
-package com.demo.java7.webservice.tcp;
+package com.demo.java7.expose.tcp;
 
 public enum TCPServiceType {
 

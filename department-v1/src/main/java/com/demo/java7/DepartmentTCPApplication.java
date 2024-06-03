@@ -1,6 +1,6 @@
 package com.demo.java7;
 
-import com.demo.java7.webservice.tcp.DepartmentTCPService;
+import com.demo.java7.expose.tcp.DepartmentTCPService;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;

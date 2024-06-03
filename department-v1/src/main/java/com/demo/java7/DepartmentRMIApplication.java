@@ -1,8 +1,8 @@
 package com.demo.java7;
 
-import com.demo.java7.webservice.rmi.RMIRemoteObjectType;
+import com.demo.java7.expose.rmi.RMIRemoteObjectType;
 import com.demo.java7.departments.rmi.DepartmentRMIService;
-import com.demo.java7.webservice.rmi.DepartmentRMIServiceImpl;
+import com.demo.java7.expose.rmi.DepartmentRMIServiceImpl;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;

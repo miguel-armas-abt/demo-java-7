@@ -3,13 +3,13 @@
 > - Esta aplicación identifica a los empleados pertenecientes a un departamento.
 
 ## Diagrama de base de datos
-![Diagrama_BD](docs/images/diagram-database.jpg)
+![Diagrama_BD](resources/images/diagram-database.jpg)
 
 ## Diagrama cliente-servidor
-![Diagrama_UML](docs/images/diagram-client-server.jpg)
+![Diagrama_UML](resources/images/diagram-client-server.jpg)
 
 ## Diagrama UML
-![Diagrama_UML](docs/images/diagram-uml.jpg)
+![Diagrama_UML](resources/images/diagram-uml.jpg)
 
 ## Pre requisitos
 - MySQL
